@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+/* Optional: apply the same fix to spans just in case you use them */
+span {
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+/* Logo animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +42,17 @@
   to {
     transform: rotate(360deg);
   }
+
+
+}
+
+
+
+
+/* Prevent iOS Safari from auto-linking phone numbers and emails */
+a[href^="mailto"], a[href^="tel"], p {
+  text-decoration: none !important;
+  border: none !important;
+  -webkit-text-decoration: none !important;
+  -webkit-user-select: text;
 }
