@@ -48,7 +48,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start w-full max-w-[1428px] mx-auto mt-24 md:mt-[270px] gap-8 md:gap-16 px-4 md:px-0">
         
         {/* Text section */}
-        <div className="w-full md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="w-full md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left md:pr-4 lg:pr-12 xl:pr-16">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -150,9 +150,9 @@ export default function Hero() {
           </MotionLink>
         </div>
 
-        {/* Image Wrapper */}
+        {/* Image Wrapper (moved up more on desktop) */}
         <motion.div
-          className="w-full md:w-[40%] flex justify-center md:justify-end mt-6 md:mt-[-80px] md:pr-[100px]"
+          className="w-full md:w-[40%] flex justify-center md:justify-end mt-6 md:mt-[-100px] md:pr-[60px] lg:pr-[100px]"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -160,7 +160,7 @@ export default function Hero() {
           <img
             src={HeroImage}
             alt="Awosanmi Oluwatobiloba"
-            className="bg-gray-200 dark:bg-gray-200 rounded-2xl w-[240px] sm:w-[260px] md:w-[200px] h-auto max-h-[300px] object-cover"
+            className="bg-gray-200 dark:bg-gray-200 rounded-2xl w-[200px] sm:w-[220px] md:w-[180px] lg:w-[200px] xl:w-[240px] h-auto max-h-[350px] object-cover"
           />
         </motion.div>
       </div>

@@ -11,6 +11,7 @@ export default function UIProjects() {
   const cardStyle = isDarkMode
     ? "bg-[#010211] border border-[#E6E8FD]"
     : "bg-white border border-[#020A51]";
+  const figmaLinkColor = isDarkMode ? "text-[#7AB8FF]" : "text-blue-600";
 
   useEffect(() => {
     const fetchUIProjects = async () => {
@@ -32,7 +33,8 @@ export default function UIProjects() {
     fetchUIProjects();
   }, []);
 
-  if (loading) return <p className="text-center mt-10">Loading UI Designs...</p>;
+  if (loading)
+    return <p className="text-center mt-10">Loading UI Designs...</p>;
 
   return (
     <div
@@ -46,10 +48,7 @@ export default function UIProjects() {
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {uiProjects.map((project) => (
-          <div
-            key={project.id}
-            className={`rounded-xl p-2 ${cardStyle}`}
-          >
+          <div key={project.id} className={`rounded-xl p-2 ${cardStyle}`}>
             <img
               src={project.thumbnailUrl}
               alt={project.title}
@@ -73,7 +72,7 @@ export default function UIProjects() {
                   href={project.figmaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block mt-3 text-sm font-medium underline hover:text-blue-600"
+                  className={`block mt-3 text-sm font-medium underline hover:opacity-90 transition-colors ${figmaLinkColor}`}
                 >
                   🔗 View Figma Link
                 </a>
