@@ -150,9 +150,9 @@ export default function Hero() {
           </MotionLink>
         </div>
 
-        {/* Image Wrapper (moved up more on desktop) */}
+        {/* Image Wrapper (aligned fully right on desktop) */}
         <motion.div
-          className="w-full md:w-[40%] flex justify-center md:justify-end mt-6 md:mt-[-100px] md:pr-[60px] lg:pr-[100px]"
+          className="w-full md:w-[40%] flex justify-center md:justify-end mt-6 md:mt-[-100px] relative"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -160,7 +160,7 @@ export default function Hero() {
           <img
             src={HeroImage}
             alt="Awosanmi Oluwatobiloba"
-            className="bg-gray-200 dark:bg-gray-200 rounded-2xl w-[200px] sm:w-[220px] md:w-[180px] lg:w-[200px] xl:w-[240px] h-auto max-h-[350px] object-cover"
+            className="bg-gray-200 dark:bg-gray-200 rounded-2xl object-contain w-[200px] sm:w-[220px] md:w-[200px] lg:w-[200px] xl:w-[240px] h-auto max-h-[350px] md:absolute md:right-0 md:top-[-20px] mr-4"
           />
         </motion.div>
       </div>
