@@ -8,7 +8,6 @@ import fintech from "../../assets/images/fintech.jpg";
 export default function Projects() {
   const { isDarkMode } = useDarkMode();
 
-  // Colors
   const cardStyle = isDarkMode
     ? "bg-[#0C0C2A] border border-[#E6E8FD]"
     : "bg-white border border-[#020A51]";
@@ -35,25 +34,25 @@ export default function Projects() {
     {
       message:
         '"I needed a flyer in less than 24 hours and he delivered something better than I imagined. Highly recommend!"',
-      name: "Seun Kuti",
+      name: "King bay",
       title: "Digital Marketer",
     },
     {
       message:
-        "The UI design for my fintech app was smooth, modern, and user-friendly. He understood my vision from day one.",
-      name: "Seun Kuti",
-      title: "Digital Marketer",
+        "The UI design for my fintech app was smooth, modern and user-friendly. He understood my vision from day one.",
+      name: "Kehinde Ayokunle",
+      title: "Full stack developer",
     },
     {
       message:
-        "Working with Tobiloba was a seamless process. Fast turnaround and premium quality work.",
-      name: "Seun Kuti",
-      title: "Digital Marketer",
+        "Amazing turnaround time and design quality. Every detail was professionally executed. Great work!",
+      name: "Olat gadget",
+      title: "Entrepreneur",
     },
     {
       message:
-        "Great communication and delivery. Would definitely work with him again!",
-      name: "Seun Kuti",
+        "Working with Tobiloba was a breeze. His designs helped my brand stand out and convert better online.",
+      name: "Oluwaseun",
       title: "Digital Marketer",
     },
   ];
@@ -157,35 +156,37 @@ export default function Projects() {
           <h2 className={`text-4xl font-bold mb-10 ${headingColor}`}>
             Clients Review
           </h2>
-          <div className="flex gap-6 overflow-x-auto px-2 py-4">
-            {testimonials.map((review, index) => (
-              <div
-                key={index}
-                className={`min-w-[300px] max-w-[320px] p-6 rounded-2xl shadow-md ${cardStyle} flex flex-col justify-between`}
-              >
-                <p className={`text-left mb-6 ${textColor}`}>{review.message}</p>
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-14 h-14 rounded-full"
-                    style={{ backgroundColor: avatarBgColor }}
-                  ></div>
-                  <div className="text-left">
-                    <p
-                      className="font-bold text-base"
-                      style={{ color: reviewerNameColor }}
-                    >
-                      {review.name}
-                    </p>
-                    <p
-                      className="text-sm"
-                      style={{ color: reviewerTitleColor }}
-                    >
-                      {review.title}
-                    </p>
+          <div className="relative overflow-hidden w-full">
+            <div className="flex gap-6 w-max animate-scroll-left">
+              {[...testimonials, ...testimonials].map((review, index) => (
+                <div
+                  key={index}
+                  className={`min-w-[300px] max-w-[320px] p-6 rounded-2xl shadow-md ${cardStyle} flex flex-col justify-between`}
+                >
+                  <p className={`text-left mb-6 ${textColor}`}>{review.message}</p>
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="w-14 h-14 rounded-full"
+                      style={{ backgroundColor: avatarBgColor }}
+                    ></div>
+                    <div className="text-left">
+                      <p
+                        className="font-bold text-base"
+                        style={{ color: reviewerNameColor }}
+                      >
+                        {review.name}
+                      </p>
+                      <p
+                        className="text-sm"
+                        style={{ color: reviewerTitleColor }}
+                      >
+                        {review.title}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

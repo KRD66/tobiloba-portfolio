@@ -10,25 +10,25 @@ const testimonials = [
   {
     message:
       '"I needed a flyer in less than 24 hours and he delivered something better than I imagined. Highly recommend!"',
-    name: "Seun Kuti",
+    name: "King bay",
     title: "Digital Marketer",
   },
   {
     message:
       "The UI design for my fintech app was smooth, modern and user-friendly. He understood my vision from day one.",
-    name: "Seun Kuti",
-    title: "Digital Marketer",
+    name: "Kehinde Ayokunle",
+    title: "Full stack developer",
   },
   {
     message:
       "Amazing turnaround time and design quality. Every detail was professionally executed. Great work!",
-    name: "Seun Kuti",
-    title: "Digital Marketer",
+    name: "Olat gadget",
+    title: "Entrepreneur",
   },
   {
     message:
       "Working with Tobiloba was a breeze. His designs helped my brand stand out and convert better online.",
-    name: "Seun Kuti",
+    name: "Oluwaseun",
     title: "Digital Marketer",
   },
 ];
