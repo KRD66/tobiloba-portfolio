@@ -10,7 +10,7 @@ export default function Projects() {
 
   // Colors
   const cardStyle = isDarkMode
-    ? "bg-[#0C0C2A] border border-[#E6E8FD]" // darker box bg
+    ? "bg-[#0C0C2A] border border-[#E6E8FD]"
     : "bg-white border border-[#020A51]";
 
   const buttonStyle = isDarkMode
@@ -79,7 +79,9 @@ export default function Projects() {
               alt="Flyer 1"
               className="rounded-lg w-full h-auto object-cover"
             />
-            <p className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}>
+            <p
+              className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}
+            >
               E-flyer Design
             </p>
           </div>
@@ -90,7 +92,9 @@ export default function Projects() {
               alt="Flyer 2"
               className="rounded-lg w-full h-auto object-cover"
             />
-            <p className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}>
+            <p
+              className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}
+            >
               Logo Design
             </p>
           </div>
@@ -101,7 +105,9 @@ export default function Projects() {
               alt="Logo Design"
               className="rounded-lg w-full h-auto object-cover"
             />
-            <p className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}>
+            <p
+              className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}
+            >
               E-flyer Design
             </p>
           </div>
@@ -112,7 +118,9 @@ export default function Projects() {
               alt="Fintech App Design"
               className="rounded-lg w-full h-auto object-cover"
             />
-            <p className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}>
+            <p
+              className={`mt-2 text-center font-semibold text-base md:text-lg ${textColor}`}
+            >
               Fintech App Design for TopPay
             </p>
           </div>
@@ -120,18 +128,22 @@ export default function Projects() {
 
         {/* Navigation Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-          <Link
-            to="/projects/flyers"
+          <a
+            href="https://drive.google.com/drive/folders/1-3iofpj6AXQQC_Sh4Ej63hsX6n8z7lfz"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} hover:border-red-500`}
           >
             View Flyers →
-          </Link>
-          <Link
-            to="/projects/logos"
+          </a>
+          <a
+            href="https://drive.google.com/drive/folders/19psDfBJkABgoidPKF0Rt9A6OiQFiveyM"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} hover:border-red-500`}
           >
             View Logos →
-          </Link>
+          </a>
           <Link
             to="/projects/ui"
             className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} hover:border-red-500`}
@@ -142,7 +154,9 @@ export default function Projects() {
 
         {/* Testimonials Section */}
         <div className="text-center">
-          <h2 className={`text-4xl font-bold mb-10 ${headingColor}`}>Clients Review</h2>
+          <h2 className={`text-4xl font-bold mb-10 ${headingColor}`}>
+            Clients Review
+          </h2>
           <div className="flex gap-6 overflow-x-auto px-2 py-4">
             {testimonials.map((review, index) => (
               <div
@@ -156,10 +170,16 @@ export default function Projects() {
                     style={{ backgroundColor: avatarBgColor }}
                   ></div>
                   <div className="text-left">
-                    <p className="font-bold text-base" style={{ color: reviewerNameColor }}>
+                    <p
+                      className="font-bold text-base"
+                      style={{ color: reviewerNameColor }}
+                    >
                       {review.name}
                     </p>
-                    <p className="text-sm" style={{ color: reviewerTitleColor }}>
+                    <p
+                      className="text-sm"
+                      style={{ color: reviewerTitleColor }}
+                    >
                       {review.title}
                     </p>
                   </div>

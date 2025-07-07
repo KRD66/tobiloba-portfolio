@@ -54,5 +54,5 @@ a[href^="mailto"], a[href^="tel"], p {
   text-decoration: none !important;
   border: none !important;
   -webkit-text-decoration: none !important;
-  -webkit-user-select: text;
+  
 }
