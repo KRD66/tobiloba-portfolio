@@ -5,7 +5,7 @@ import Logo from '../../assets/images/temtoplogo.png';
 import { useDarkMode } from '../../context/DarkModeContext';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false); // ✅ Fix: default is now false
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
