@@ -16,6 +16,7 @@ export default function Projects() {
     ? "bg-[#020A51] text-[#E6E8FD] border-[#E6E8FD]"
     : "bg-white text-[#020A51] border-[#020A51]";
 
+  const hoverBorder = isDarkMode ? "hover:border-[#079927]" : "hover:border-red-500";
   const headingColor = isDarkMode ? "text-[#E6E8FD]" : "text-[#020A51]";
   const textColor = isDarkMode ? "text-[#E6E8FD]" : "text-[#020A51]";
   const linkColor = isDarkMode ? "text-[#E6E8FD]" : "text-[#020A51]";
@@ -131,7 +132,7 @@ export default function Projects() {
             href="https://drive.google.com/drive/folders/1-3iofpj6AXQQC_Sh4Ej63hsX6n8z7lfz"
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} hover:border-red-500`}
+            className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} ${hoverBorder}`}
           >
             View Flyers →
           </a>
@@ -139,13 +140,13 @@ export default function Projects() {
             href="https://drive.google.com/drive/folders/19psDfBJkABgoidPKF0Rt9A6OiQFiveyM"
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} hover:border-red-500`}
+            className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} ${hoverBorder}`}
           >
             View Logos →
           </a>
           <Link
             to="/projects/ui"
-            className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} hover:border-red-500`}
+            className={`w-[160px] h-[44px] font-comfortaa text-sm md:text-base font-bold rounded-xl flex items-center justify-center border transition-colors duration-300 ${buttonStyle} ${linkColor} ${hoverBorder}`}
           >
             Figma Link →
           </Link>

@@ -5,7 +5,7 @@ import { useDarkMode } from "../../context/DarkModeContext";
 import coreldrawIcon from "../../assets/icons/coreldraw.svg";
 import wordIcon from "../../assets/icons/word.svg";
 import powerpointIcon from "../../assets/icons/powerpoint.svg";
-import resumePDF from "../../assets/docs/temtopresume.pdf"; // ✅ Import your resume
+import resumePDF from "../../assets/docs/temtopresume.pdf";
 
 export default function About() {
   const { isDarkMode } = useDarkMode();
@@ -57,7 +57,7 @@ export default function About() {
             <div
               className={`p-6 rounded-2xl ${
                 isDarkMode
-                  ? "bg-[#010211] border border-[#E6E8FD]"
+                  ? "bg-[#010211] border border-[#ccc]"
                   : "bg-white border border-[#020A51] shadow-md"
               }`}
             >
@@ -82,7 +82,7 @@ export default function About() {
               rel="noopener noreferrer"
               className={`w-[184px] h-[44px] font-comfortaa font-bold text-sm md:text-base rounded-xl mt-4 flex items-center justify-center border transition-colors duration-300 gap-2 ${
                 isDarkMode
-                  ? "bg-[#020A51] text-[#E6E8FD] border-[#E6E8FD] hover:border-red-500"
+                  ? "bg-[#020A51] text-[#E6E8FD] border-[#ccc] hover:border-[#079927]"
                   : "bg-white text-[#020A51] border-[#020A51] hover:border-red-500"
               }`}
             >
@@ -100,7 +100,7 @@ export default function About() {
               <p className="text-xl md:text-2xl font-bold">
                 National Diploma in Computer Science
               </p>
-              <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[red]" : "text-[#079927]"}`}>
+              <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[#079927]" : "text-[#079927]"}`}>
                 Federal Polytechnic Ede, Osun State - 2022
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function About() {
               <p className="text-xl md:text-2xl font-bold">
                 Higher National Diploma in Computer Science
               </p>
-              <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[red]" : "text-[#079927]"}`}>
+              <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[#079927]" : "text-[#079927]"}`}>
                 Federal Polytechnic Ede, Osun State - 2024
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function About() {
                 <p className="text-xl md:text-2xl font-bold">
                   Product Design Brainstorming with <br /> Miro
                 </p>
-                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[red]" : "text-[#079927]"}`}>
+                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[#079927]": "text-[#079927]"}`}>
                   Project Authorized by Coursera - 2025
                 </p>
               </div>
@@ -132,7 +132,7 @@ export default function About() {
                 <p className="text-xl md:text-2xl font-bold">
                   User Interface and User Experience <br /> Course
                 </p>
-                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[red]" : "text-[#079927]"}`}>
+                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[#079927]" : "text-[#079927]"}`}>
                   Anettcom Academy - 2025
                 </p>
               </div>
@@ -143,7 +143,7 @@ export default function About() {
                 <p className="text-xl md:text-2xl font-bold">
                   Agile Project: Product Prototype <br /> Touchpoint Analysis in Miro
                 </p>
-                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[red]" : "text-[#079927]"}`}>
+                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[#079927]" : "text-[#079927]"}`}>
                 Project Authorized by Coursera - 2025
                 </p>
               </div>
@@ -151,7 +151,7 @@ export default function About() {
                 <p className="text-xl md:text-2xl font-bold"><br />
                   Jobberman Soft Skill Training
                 </p>
-                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[red]" : "text-[#079927]"}`}>
+                <p className={`text-base md:text-lg font-medium ${isDarkMode ? "text-[#079927]" : "text-[#079927]"}`}>
                   2023
                 </p>
               </div>

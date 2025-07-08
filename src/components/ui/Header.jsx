@@ -1,49 +1,67 @@
 import { useState } from 'react';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import Logo from '../../assets/images/temtoplogo.png';
 import { useDarkMode } from '../../context/DarkModeContext';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false); // ✅ Fix: default is now false
+  const [isOpen, setIsOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
+  const navItems = [
+    { name: 'Home', to: 'home' },
+    { name: 'About', to: 'about' },
+    { name: 'Projects', to: 'projects' },
+  ];
+
   return (
-    <header className={`w-full max-w-[1440px] h-[100px] mx-auto border-b sticky top-0 z-20 ${
-      isDarkMode ? 'bg-[#000] border-[#E6E8FD]' : 'bg-[#020A51] border-[#C7CCF9]'
-    }`}>
+    <header
+      className={`w-full max-w-[1440px] h-[100px] mx-auto border-b sticky top-0 z-20 ${
+        isDarkMode ? 'bg-[#000] border-[#cccc]' : 'bg-[#020A51] border-[#C7CCF9]'
+      }`}
+    >
       <div className="h-full flex items-center justify-between px-2 sm:px-8">
-        
-        {/* Left: Logo */}
+        {/* Left: Logo as ScrollLink */}
         <div className="flex items-center pl-0 sm:pl-4">
-          <img
-            src={Logo}
-            alt="Temtop Logo"
-            className="w-40 h-12 object-contain rounded-lg"
-          />
+          <ScrollLink
+            to="home"
+            smooth={true}
+            duration={600}
+            offset={-100}
+            className="cursor-pointer"
+          >
+            <img
+              src={Logo}
+              alt="Temtop Logo"
+              className="w-40 h-12 object-contain rounded-lg"
+            />
+          </ScrollLink>
         </div>
 
-        {/* Desktop Nav - Centered */}
+        {/* Desktop Nav - Centered using absolute + transform */}
         <nav className="hidden md:flex items-center h-[60px] space-x-10 absolute left-1/2 transform -translate-x-1/2">
-          {['Home', 'About', 'Projects'].map((item) => (
-            <div key={item} className="relative group">
-              <Link
-                to={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
+          {navItems.map(({ name, to }) => (
+            <div key={name} className="relative group cursor-pointer">
+              <ScrollLink
+                to={to}
+                smooth={true}
+                duration={600}
+                offset={-100}
                 className={`flex items-center justify-center w-[90px] h-[40px] text-xl font-bold font-comfortaa ${
                   isDarkMode
                     ? 'text-[#E6E8FD] group-hover:text-white'
-                    : 'text-[#E6EBFD] group-hover:text-white'
+                    : 'text-[#E6E8FD] group-hover:text-white'
                 }`}
               >
-                {item}
-              </Link>
+                {name}
+              </ScrollLink>
               <div
                 className={`absolute bottom-0 left-0 w-0 h-[2px] ${
                   isDarkMode ? 'bg-[#E6E8FD]' : 'bg-[#E6E8FD]'
                 } opacity-0 group-hover:opacity-100 transition-all duration-200 ${
-                  item === 'Home'
+                  name === 'Home'
                     ? 'group-hover:w-1/2'
-                    : item === 'About'
+                    : name === 'About'
                     ? 'group-hover:w-[75%]'
                     : 'group-hover:w-[85%]'
                 }`}
@@ -52,12 +70,15 @@ export default function Header() {
           ))}
 
           {/* Contact Us Button */}
-          <Link
-            to="/contact"
-            className="flex items-center justify-center h-[40px] px-[20px] py-[12px] rounded-md gap-[5px] font-comfortaa font-bold text-lg bg-[#E6E8FD] text-[#020A51] hover:bg-[#E6E8FD]/90 transition-colors"
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={600}
+            offset={-100}
+            className="flex items-center justify-center h-[40px] px-[20px] py-[12px] rounded-md gap-[5px] font-comfortaa font-bold text-lg bg-[#E6E8FD] text-[#020A51] hover:bg-[#E6E8FD]/90 transition-colors cursor-pointer"
           >
             Contact Us
-          </Link>
+          </ScrollLink>
         </nav>
 
         {/* Right: Mobile controls */}
@@ -99,10 +120,13 @@ export default function Header() {
               : 'bg-[#020A51] border-t border-[#C7CCF9]'
           } px-6 py-4`}
         >
-          {['Home', 'About', 'Projects'].map((item) => (
-            <div key={item} className="relative group mb-4">
-              <Link
-                to={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
+          {navItems.map(({ name, to }) => (
+            <div key={name} className="relative group mb-4 cursor-pointer">
+              <ScrollLink
+                to={to}
+                smooth={true}
+                duration={600}
+                offset={-100}
                 className={`block w-full h-[40px] flex items-center text-xl font-bold font-comfortaa ${
                   isDarkMode
                     ? 'text-[#E6E8FD] group-hover:text-white'
@@ -110,15 +134,15 @@ export default function Header() {
                 }`}
                 onClick={() => setIsOpen(false)}
               >
-                {item}
-              </Link>
+                {name}
+              </ScrollLink>
               <div
                 className={`absolute bottom-0 left-0 w-0 h-[2px] ${
                   isDarkMode ? 'bg-[#E6E8FD]' : 'bg-[#E6E8FD]'
                 } opacity-0 group-hover:opacity-100 transition-all duration-200 ${
-                  item === 'Home'
+                  name === 'Home'
                     ? 'group-hover:w-1/2'
-                    : item === 'About'
+                    : name === 'About'
                     ? 'group-hover:w-[75%]'
                     : 'group-hover:w-[85%]'
                 }`}
@@ -127,13 +151,16 @@ export default function Header() {
           ))}
 
           {/* Mobile Contact Us */}
-          <Link
-            to="/contact"
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={600}
+            offset={-100}
             onClick={() => setIsOpen(false)}
-            className="w-full h-[40px] px-[20px] py-[12px] rounded-md gap-[5px] font-comfortaa font-bold text-lg bg-[#E6E8FD] text-[#020A51] hover:bg-[#E6E8FD]/90 transition-colors flex items-center justify-center"
+            className="w-full h-[40px] px-[20px] py-[12px] rounded-md gap-[5px] font-comfortaa font-bold text-lg bg-[#E6E8FD] text-[#020A51] hover:bg-[#E6E8FD]/90 transition-colors flex items-center justify-center cursor-pointer"
           >
             Contact Us
-          </Link>
+          </ScrollLink>
         </div>
       )}
     </header>

@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import HeroImage from '../../assets/images/temtop.jpg';
 import { useDarkMode } from '../../context/DarkModeContext';
-
-const MotionLink = motion(Link);
 
 export default function Hero() {
   const mainText = "Welcome, I'm Awosanmi Oluwatobiloba";
@@ -80,7 +78,7 @@ export default function Hero() {
           {/* Subtext 1 */}
           <motion.p
             className={`text-sm sm:text-base md:text-lg font-comfortaa font-bold mt-4 ${
-              isDarkMode ? 'text-red-500' : 'text-[#079927]'
+              isDarkMode ? 'text-[#079927]' : 'text-[#079927]'
             } md:pl-[250px] md:max-w-[200px]`}
             initial="hidden"
             animate="visible"
@@ -104,13 +102,13 @@ export default function Hero() {
 
           {/* Line */}
           <hr className={`border-t-[4px] w-[90%] max-w-[300px] sm:max-w-[400px] md:max-w-[600px] mt-2 ${
-            isDarkMode ? 'border-[#E6E8FD]' : 'border-[#020A51]'
+            isDarkMode ? 'border-[#ccc]' : 'border-[#020A51]'
           } md:ml-[130px]`} />
 
           {/* Subtext 2 */}
           <motion.p
             className={`text-sm sm:text-base md:text-lg font-comfortaa font-bold mt-2 ${
-              isDarkMode ? 'text-red-500' : 'text-[#079927]'
+              isDarkMode ? 'text-[#079927]' : 'text-[#079927]'
             } md:pl-[250px] md:max-w-[200px]`}
             initial="hidden"
             animate="visible"
@@ -133,24 +131,31 @@ export default function Hero() {
             ))}
           </motion.p>
 
-          {/* Button */}
-          <MotionLink
-            to="/projects"
+          {/* Scroll Button */}
+          <motion.div
             className={`w-[184px] h-[44px] font-comfortaa font-bold text-sm md:text-base rounded-xl mt-6 md:mt-4 flex items-center justify-center border transition-colors duration-300 ${
               isDarkMode
-                ? 'bg-[#020A51] text-[#E6E8FD] border-[#E6E8FD] hover:border-red-500'
+                ? 'bg-[#020A51] text-[#E6E8FD] border-[#ccc] hover:border-[#079927]'
                 : 'bg-white text-[#020A51] border-[#020A51] hover:border-red-500'
             } ${isDarkMode ? 'md:ml-[310px]' : 'md:ml-[310px]'} mx-auto md:mx-0`}
             initial="hidden"
             animate="visible"
             variants={buttonVariants}
           >
-            <span>View Projects</span>
-            <FaArrowRight className="ml-1 text-inherit text-sm md:text-base" />
-          </MotionLink>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={700}
+              offset={-80}
+              className="cursor-pointer flex items-center gap-1"
+            >
+              <span>View Projects</span>
+              <FaArrowRight className="text-inherit text-sm md:text-base" />
+            </ScrollLink>
+          </motion.div>
         </div>
 
-        {/* Image Wrapper (aligned fully right on desktop) */}
+        {/* Image Wrapper aligned fully to the right */}
         <motion.div
           className="w-full md:w-[40%] flex justify-center md:justify-end mt-6 md:mt-[-100px] relative"
           initial={{ opacity: 0, x: 20 }}

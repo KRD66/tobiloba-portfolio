@@ -35,6 +35,7 @@ export default function Contact() {
 
   return (
     <section
+      id="contact"
       className="min-h-screen w-full px-4 py-20 font-comfortaa transition-colors duration-300"
       style={{ backgroundColor: bgColor }}
     >
@@ -47,7 +48,7 @@ export default function Contact() {
         </h2>
         <p
           className="text-base md:text-lg font-semibold mt-2"
-          style={{ color: isDarkMode ? "red" : "#079927" }}
+          style={{ color: "#079927" }}
         >
           Let’s build something amazing together!
         </p>
@@ -62,26 +63,20 @@ export default function Contact() {
             </h3>
 
             <div className="flex items-center gap-2 mb-1 text-lg">
-              <MdEmail className="text-2xl" style={{ color: isDarkMode ? "red" : "#079927" }} />
-              <span style={{ color: isDarkMode ? "red" : "#079927" }}>Email</span>
+              <MdEmail className="text-2xl" style={{ color: "#079927" }} />
+              <span style={{ color: "#079927" }}>Email</span>
             </div>
-            <p className="text-base ml-7" style={{
-              color: isDarkMode ? "red" : "#079927",
-              borderBottom: "none"
-            }}>
+            <p className="text-base ml-7" style={{ color: "#079927" }}>
               temtopconcept1@gmail.com
             </p>
 
             <br />
 
             <div className="flex items-center gap-2 mb-1 text-lg">
-              <FaPhone className="text-2xl transform rotate-90" style={{ color: isDarkMode ? "red" : "#079927" }} />
-              <span style={{ color: isDarkMode ? "red" : "#079927" }}>Phone Number</span>
+              <FaPhone className="text-2xl rotate-90" style={{ color: "#079927" }} />
+              <span style={{ color: "#079927" }}>Phone Number</span>
             </div>
-            <p className="text-base ml-7" style={{
-              color: isDarkMode ? "red" : "#079927",
-              borderBottom: "none"
-            }}>
+            <p className="text-base ml-7" style={{ color: "#079927" }}>
               08144521784 , 09064940864
             </p>
           </div>
@@ -90,9 +85,7 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mb-3" style={{ color: textColor }}>
               Let's Connect
             </h3>
-            <div className="flex items-center gap-5 text-3xl"
-              style={{ color: isDarkMode ? "red" : "#079927" }}
-            >
+            <div className="flex items-center gap-5 text-3xl" style={{ color: "#079927" }}>
               <a href="https://www.linkedin.com/in/oluwatobiloba-awosanmi-485619370" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
@@ -118,7 +111,9 @@ export default function Contact() {
               name="user_name"
               placeholder="Enter your name"
               required
-              className="w-full md:w-1/2 px-4 py-3 border rounded text-base outline-none focus:ring-2 focus:ring-red-500 placeholder:text-gray-400"
+              className={`w-full md:w-1/2 px-4 py-3 border rounded text-base placeholder:text-gray-400 ${
+                isDarkMode ? "focus:border-[#079927]" : "focus:border-[#020A51]"
+              } focus:outline-none`}
               style={{
                 color: inputTextColor,
                 backgroundColor: bgColor,
@@ -130,7 +125,9 @@ export default function Contact() {
               name="user_email"
               placeholder="Enter your email"
               required
-              className="w-full md:w-1/2 px-4 py-3 border rounded text-base outline-none focus:ring-2 focus:ring-red-500 placeholder:text-gray-400"
+              className={`w-full md:w-1/2 px-4 py-3 border rounded text-base placeholder:text-gray-400 ${
+                isDarkMode ? "focus:border-[#079927]" : "focus:border-[#020A51]"
+              } focus:outline-none`}
               style={{
                 color: inputTextColor,
                 backgroundColor: bgColor,
@@ -140,10 +137,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label
-              className="block mb-1 font-bold text-lg md:text-xl"
-              style={{ color: textColor }}
-            >
+            <label className="block mb-1 font-bold text-lg md:text-xl" style={{ color: textColor }}>
               Message
             </label>
             <textarea
@@ -151,7 +145,9 @@ export default function Contact() {
               rows="5"
               placeholder="Your message"
               required
-              className="w-full px-4 py-3 border rounded resize-none text-base outline-none focus:ring-2 focus:ring-red-500 placeholder:text-gray-400"
+              className={`w-full px-4 py-3 border rounded resize-none text-base placeholder:text-gray-400 ${
+                isDarkMode ? "focus:border-[#079927]" : "focus:border-[#020A51]"
+              } focus:outline-none`}
               style={{
                 color: inputTextColor,
                 backgroundColor: bgColor,
@@ -164,9 +160,10 @@ export default function Contact() {
             type="submit"
             className={`flex items-center justify-center gap-2 w-full py-3 text-lg font-bold rounded border-2 transition-all duration-300 group ${
               isDarkMode
-                ? "text-[#020A51] bg-[#E6E8FD] border-[#E6E8FD] hover:border-red-500"
-                : "text-white bg-[#020A51] border-[#020A51] hover:border-red-500"
+                ? "text-[#020A51] bg-[#E6E8FD] border-[#E6E8FD]"
+                : "text-white bg-[#020A51] border-[#020A51]"
             }`}
+            style={{ hover: { borderColor: isDarkMode ? "#079927" : "#020A51" } }}
           >
             Send Message
             <AiOutlineSend className="text-xl transition-transform group-hover:-rotate-45" />
